@@ -1,0 +1,49 @@
+ @page { margin: 100px 40px; }
+
+table {
+   /* border:0.1px solid #d3d3d3;
+    background:#fff;
+    width:100%;
+    font-family: arial;*/
+}
+th, td {
+    padding:0px 0px 0px; 
+    text-align:center;
+}
+th {
+    padding:2px 0; 
+    background:#525252;
+    color: #fff;
+}
+tr:nth-child(even) {
+    background: #CCC
+}
+tr:nth-child(odd) {
+    background: #FFF
+}           
+#header-pdf { 
+    position: fixed; 
+    top: -50px;  
+    height: 50px;
+    
+}
+#footer-pdf { 
+    position: fixed;  
+    bottom: -50px;  
+    height: 50px; 
+}
+#footer-pdf .page{ 
+    text-align: center
+}
+#footer-pdf img{
+    margin-left: -40px;
+}
+#footer-pdf .page:after { 
+    content: counter(page,my-awesome-counter); 
+}  
+.text-right{
+    text-align: right;
+}            
+.text-left{
+    text-align: left;
+}
