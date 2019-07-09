@@ -153,6 +153,14 @@ $('#btnRelatorio').click(function() {
      maxDate: new Date()
  });  
 
+ $("#startDate").on("dp.change", function (e) {
+        $('#endDate').data("DateTimePicker").minDate(e.date);
+ });
+
+ $("#endDate").on("dp.change", function (e) {
+        $('#startDate').data("DateTimePicker").maxDate(e.date);
+ });
+
 /*
    Retorna un color de forma aleatoria
 */

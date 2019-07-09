@@ -3,7 +3,7 @@
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\models\CaoUsuario;
+use App\Models\CaoUsuario;
 
 
 

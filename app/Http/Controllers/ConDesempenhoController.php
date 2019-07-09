@@ -5,9 +5,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Validator;
-use App\models\CaoFatura;
-use App\models\CaoSalario;
-use App\models\CaoUsuario;
+use App\Models\CaoFatura;
+use App\Models\CaoSalario;
+use App\Models\CaoUsuario;
 
 class ConDesempenhoController extends Controller {
 
@@ -153,7 +153,7 @@ class ConDesempenhoController extends Controller {
            $consultor = $user[$i];
            $dataConsultor = CaoUsuario::getConsultor($consultor);
            $dataDesempenho = $this->getDesempenhoCosultor($consultor, $fromDate, $endDate);
-           $cuxtoFixo = CaoSalario::getSalarioByUser($user);
+           $cuxtoFixo = CaoSalario::getSalarioByUser($consultor);
            if(!empty($cuxtoFixo[0])){
             $cuxtoFixo = $cuxtoFixo[0]->brut_salario;
            }else {
@@ -180,7 +180,7 @@ class ConDesempenhoController extends Controller {
           
         }
        
-        $data = array('dataSets'=>$dataValores, 'months'=>$dataMonthYear, 'dataUser'=>$dataUser, 'cuxtoFixoMedio'=>$cuxtoFixoMedio);
+        $data = array('dataSets'=>$dataValores, 'months'=>$dataMonthYear, 'dataUser'=>$dataUser, 'cuxtoFixoMedio'=>round($cuxtoFixoMedio,2));
         return response()->json($data);
   }
 
